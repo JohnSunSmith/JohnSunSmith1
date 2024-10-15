@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: johnsunsmithazureaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: johnsunsmithazureaks
+  template:
+    metadata:
+      labels:
+        app: johnsunsmithazureaks 
+    spec:
+      containers:
+        - name: johnsunsmithazureaks 
+          image: sunnytestcontainerregistry.azurecr.io/johnsunsmithazureaks
+          ports:
+          - containerPort: 80
